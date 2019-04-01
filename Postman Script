@@ -1,0 +1,54 @@
+{
+	"info": {
+		"_postman_id": "8d3baa53-b498-4127-a526-e3625e827f96",
+		"name": "5280 IDPA Monitor",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "https://practiscore.com/clubs/5280-armory-idpa",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "ebeb9941-c1fd-4708-97c5-180565df81ba",
+						"exec": [
+							"pm.test('Response time < 400ms', function () {",
+							"\tpm.response.to.have.status(200);",
+							"\tpm.expect(pm.response.responseTime).to.be.below(400);",
+							"})",
+							"pm.test(\"Body matches string\", function () {",
+							"    pm.expect(pm.response.text()).to.include(\"No upcoming matches\");",
+							"});"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://practiscore.com/clubs/5280-armory-idpa",
+					"protocol": "https",
+					"host": [
+						"practiscore",
+						"com"
+					],
+					"path": [
+						"clubs",
+						"5280-armory-idpa"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
